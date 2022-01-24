@@ -1,0 +1,43 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "schedule:weekly",
+    ":maintainLockFilesWeekly"
+  ],
+  "dependencyDashboard": true,
+  "dependencyDashboardAutoclose": true,
+  "packageRules": [
+    {
+      "matchFiles": [
+        "package.json"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "node"
+    },
+    {
+      "matchFiles": [
+        "Gemfile"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "ruby"
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^*.gemspec"
+      ],
+      "matchStrings": [
+        ".*add.*dependency '(?<depName>.*?)', '(?<currentValue>.*?)'"
+      ],
+      "datasourceTemplate": "rubygems"
+    }
+  ]
+}
