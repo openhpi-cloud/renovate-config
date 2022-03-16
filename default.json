@@ -6,7 +6,6 @@
     ":maintainLockFilesWeekly"
   ],
   "dependencyDashboard": true,
-  "dependencyDashboardAutoclose": true,
   "packageRules": [
     {
       "matchFiles": [
