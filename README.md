@@ -1,0 +1,1 @@
+# Shared Renovate Presets

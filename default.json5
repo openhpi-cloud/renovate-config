@@ -1,0 +1,11 @@
+{
+	$schema: "https://docs.renovatebot.com/renovate-schema.json",
+	extends: [
+		"config:base",
+		"schedule:weekly",
+		":maintainLockFilesWeekly",
+		"github>jgraichen/renovate-config:node.json5",
+		"github>jgraichen/renovate-config:ruby.json5",
+	],
+	dependencyDashboard: true,
+}
