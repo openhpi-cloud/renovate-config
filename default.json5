@@ -4,6 +4,7 @@
 		"config:base",
 		"schedule:weekly",
 		":maintainLockFilesWeekly",
+		"github>jgraichen/renovate-config:go.json5",
 		"github>jgraichen/renovate-config:node.json5",
 		"github>jgraichen/renovate-config:ruby.json5",
 	],
