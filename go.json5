@@ -1,9 +1,17 @@
 {
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	postUpdateOptions: ["gomodTidy", "gomodUpdateImportPaths"],
+	packageRules: [
+		{
+			matchDatasources: ["golang-version"],
+			versioning: "npm",
+			rangeStrategy: "pin",
+			groupName: "golang",
+		},
+	],
 	regexManagers: [
 		{
-			fileMatch: ["^\\.github\/workflows\/[^/]+\\.ya?ml$"],
+			fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
 			matchStrings: ['go-version: "(?<currentValue>.*?)"'],
 			depNameTemplate: "golang",
 			datasourceTemplate: "golang-version",
