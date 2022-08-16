@@ -3,7 +3,7 @@
 	postUpdateOptions: ["gomodTidy", "gomodUpdateImportPaths"],
 	regexManagers: [
 		{
-			fileMatch: ["^\\.github/workflow/[^/]+\\.ya?ml$"],
+			fileMatch: ["^\\.github\/workflows\/[^/]+\\.ya?ml$"],
 			matchStrings: ['go-version: "(?<currentValue>.*?)"'],
 			depNameTemplate: "golang",
 			datasourceTemplate: "golang-version",
