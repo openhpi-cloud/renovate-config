@@ -5,7 +5,7 @@
 		{
 			matchDatasources: ["golang-version"],
 			versioning: "npm",
-			rangeStrategy: "bump",
+			rangeStrategy: "replace",
 			groupName: "golang",
 		},
 	],
