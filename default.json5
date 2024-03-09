@@ -9,4 +9,14 @@
 		"github>jgraichen/renovate-config:ruby.json5",
 	],
 	dependencyDashboard: true,
+
+	// Do not use GitHub's platform native automerge. It requires
+	// configuring required checks, which is an allowlist only approach
+	// and cumbersome to use because EVERY check needs to be listed, and
+	// new checks are not added automatically. There is no option to
+	// "required all except".
+	platformAutomerge: false,
+
+	// Have renovate sign commits as GitHub App.
+	platformCommit: true,
 }
