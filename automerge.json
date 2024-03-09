@@ -1,0 +1,6 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"github>jgraichen/renovate-config:automerge.json5"
+	]
+}
