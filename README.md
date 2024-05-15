@@ -6,7 +6,7 @@ Shared configuration preset for @renovatebot.
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
-    "local>openhpi-cloud/renovate-config"
+    "local>jgraichen/renovate-config"
   ]
 }
 ```

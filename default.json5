@@ -4,11 +4,11 @@
 		"config:recommended",
 		"schedule:weekly",
 		":maintainLockFilesWeekly",
-		"local>openhpi-cloud/renovate-config:go.json5",
-		"local>openhpi-cloud/renovate-config:node.json5",
-		"local>openhpi-cloud/renovate-config:ruby.json5",
-		"local>openhpi-cloud/renovate-config:terraform.json5",
-		"local>openhpi-cloud/renovate-config:tool-version.json5",
+		"local>jgraichen/renovate-config:go.json5",
+		"local>jgraichen/renovate-config:node.json5",
+		"local>jgraichen/renovate-config:ruby.json5",
+		"local>jgraichen/renovate-config:terraform.json5",
+		"local>jgraichen/renovate-config:tool-version.json5",
 	],
 
 	// Useful defaults
