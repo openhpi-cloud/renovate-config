@@ -40,4 +40,10 @@
 			automerge: true,
 		},
 	],
+
+	vulnerabilityAlerts: {
+		enabled: true,
+		labels: ["security"],
+	},
+	osvVulnerabilityAlerts: true,
 }
