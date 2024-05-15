@@ -1,7 +1,7 @@
 {
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	extends: [
-		"config:base",
+		"config:recommended",
 		"schedule:weekly",
 		":maintainLockFilesWeekly",
 		"local>openhpi-cloud/renovate-config:go.json5",

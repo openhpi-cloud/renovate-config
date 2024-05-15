@@ -2,13 +2,14 @@
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	packageRules: [
 		{
-			matchFiles: ["package.json"],
+			matchFileNames: ["**/package.json"],
 			matchUpdateTypes: ["minor", "patch"],
 			groupName: "NPM dependencies",
 		},
 	],
-	regexManagers: [
+	customManagers: [
 		{
+			customType: "regex",
 			fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
 			matchStrings: ['node-version:\\s+"(?<currentValue>.*?)"'],
 			depNameTemplate: "node",
