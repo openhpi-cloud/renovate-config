@@ -4,11 +4,18 @@
 		"config:base",
 		"schedule:weekly",
 		":maintainLockFilesWeekly",
-		"github>jgraichen/renovate-config:go.json5",
-		"github>jgraichen/renovate-config:node.json5",
-		"github>jgraichen/renovate-config:ruby.json5",
+		"local>openhpi-cloud/renovate-config:go.json5",
+		"local>openhpi-cloud/renovate-config:node.json5",
+		"local>openhpi-cloud/renovate-config:ruby.json5",
+		"local>openhpi-cloud/renovate-config:terraform.json5",
+		"local>openhpi-cloud/renovate-config:tool-version.json5",
 	],
+
+	// Useful defaults
+	semanticCommits: "enabled",
 	dependencyDashboard: true,
+
+	assignees: ["jgraichen"],
 
 	// Do not use GitHub's platform native automerge. It requires
 	// configuring required checks, which is an allowlist only approach
@@ -19,4 +26,18 @@
 
 	// Have renovate sign commits as GitHub App.
 	platformCommit: true,
+
+	packageRules: [
+		// Automerge minor updates if CI passes
+		{
+			matchUpdateTypes: [
+				"minor",
+				"patch",
+				"pin",
+				"digest",
+				"lockFileMaintenance",
+			],
+			automerge: true,
+		},
+	],
 }

@@ -4,7 +4,7 @@
 		{
 			matchFiles: ["Gemfile"],
 			matchUpdateTypes: ["minor", "patch"],
-			groupName: "ruby",
+			groupName: "gems dependencies",
 		},
 	],
 	regexManagers: [
@@ -14,6 +14,12 @@
 				".*add.*dependency '(?<depName>.*?)', '(?<currentValue>.*?)'",
 			],
 			datasourceTemplate: "rubygems",
+		},
+		{
+			fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+			matchStrings: ['ruby-version:\\s+"(?<currentValue>.*?)"'],
+			depNameTemplate: "ruby",
+			datasourceTemplate: "ruby-version",
 		},
 	],
 }

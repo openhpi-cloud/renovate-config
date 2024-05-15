@@ -1,0 +1,21 @@
+{
+	$schema: "https://docs.renovatebot.com/renovate-schema.json",
+	packageRules: [
+		// Strip the "v" prefix from usual GitHub tags/release since asdf
+		// plugins mostly use raw versions only.
+		{
+			matchManagers: ["regex"],
+			matchPaths: [".tool-versions"],
+			extractVersion: "^v?(?<version>.*)$",
+		},
+	],
+	regexManagers: [
+		{
+			fileMatch: [".tool-versions$"],
+			matchStrings: [
+				"#\\s*renovate:\\s+datasource=(?<datasource>.*?)\\s+depName=(?<depName>.*?)(\\s+versioning=(?<versioning>.*?))?\\n\\w+\\s+(?<currentValue>.*)",
+			],
+			versioningTemplate: "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+		},
+	],
+}

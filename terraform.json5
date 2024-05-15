@@ -1,0 +1,18 @@
+{
+	$schema: "https://docs.renovatebot.com/renovate-schema.json",
+	packageRules: [
+		// Group updates for Terraform binaries and hashicorp/terraform
+		// container images together.
+		{
+			groupName: "terraform",
+			matchPackageNames: ["hashicorp/terraform", "terraform"],
+		},
+		// Do not automerge major _and_ minor versions, since minor updates
+		// can contain breaking changes for Terraform.
+		{
+			matchPackageNames: ["hashicorp/terraform", "terraform"],
+			matchUpdateTypes: ["major", "minor"],
+			automerge: false,
+		},
+	],
+}

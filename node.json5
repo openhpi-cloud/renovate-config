@@ -4,7 +4,15 @@
 		{
 			matchFiles: ["package.json"],
 			matchUpdateTypes: ["minor", "patch"],
-			groupName: "node",
+			groupName: "NPM dependencies",
+		},
+	],
+	regexManagers: [
+		{
+			fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+			matchStrings: ['node-version:\\s+"(?<currentValue>.*?)"'],
+			depNameTemplate: "node",
+			datasourceTemplate: "node-version",
 		},
 	],
 }
