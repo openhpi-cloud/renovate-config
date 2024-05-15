@@ -2,18 +2,26 @@
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	packageRules: [
 		{
-			matchFiles: ["Gemfile"],
+			matchFileNames: ["**/Gemfile"],
 			matchUpdateTypes: ["minor", "patch"],
-			groupName: "ruby",
+			groupName: "gems dependencies",
 		},
 	],
-	regexManagers: [
+	customManagers: [
 		{
+			customType: "regex",
 			fileMatch: ["^*.gemspec"],
 			matchStrings: [
 				".*add.*dependency '(?<depName>.*?)', '(?<currentValue>.*?)'",
 			],
 			datasourceTemplate: "rubygems",
+		},
+		{
+			customType: "regex",
+			fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+			matchStrings: ['ruby-version:\\s+"(?<currentValue>.*?)"'],
+			depNameTemplate: "ruby",
+			datasourceTemplate: "ruby-version",
 		},
 	],
 }
