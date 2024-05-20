@@ -6,6 +6,11 @@
 			matchUpdateTypes: ["minor", "patch"],
 			groupName: "gems dependencies",
 		},
+		{
+			matchManagers: ["custom.regex"],
+			matchFileNames: [".github/workflows/*"],
+			rangeStrategy: "replace",
+		}
 	],
 	customManagers: [
 		{
