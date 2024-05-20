@@ -6,6 +6,20 @@
 			matchUpdateTypes: ["minor", "patch"],
 			groupName: "gems dependencies",
 		},
+		{
+			matchManagers: ["custom.regex"],
+			matchFileNames: [".github/workflows/*"],
+			rangeStrategy: "replace",
+		},
+		// Group ruby binaries and known container images
+		{
+			groupName: "Ruby",
+			matchPackageNames: [
+				"ghcr.io/ruby/ruby",
+				"registry.docker.com/library/ruby",
+				"ruby",
+			],
+		},
 	],
 	customManagers: [
 		{
