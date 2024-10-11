@@ -20,28 +20,29 @@
 				"ruby",
 			],
 		},
-    // Separate Ruby on Rails dependencies as they need to be upgraded
-    // together, and minors are majors.
-    {
-      matchDatasources: ['rubygems'],
-      matchDepNames: [
-        'actioncable',
-        'actionmailbox',
-        'actionmailer',
-        'actionpack',
-        'actiontext',
-        'actionview',
-        'activejob',
-        'activemodel',
-        'activerecord',
-        'activestorage',
-        'activesupport',
-        'railties',
-        'rails',
-      ],
-      matchUpdateTypes: ['major', 'minor'],
-      groupName: 'Ruby on Rails',
-    },
+		// Separate Ruby on Rails dependencies as they need to be upgraded
+		// together, and minors are majors.
+		{
+			matchDatasources: ["rubygems"],
+			matchDepNames: [
+				"actioncable",
+				"actionmailbox",
+				"actionmailer",
+				"actionpack",
+				"actiontext",
+				"actionview",
+				"activejob",
+				"activemodel",
+				"activerecord",
+				"activestorage",
+				"activesupport",
+				"railties",
+				"rails",
+			],
+			matchUpdateTypes: ["major", "minor"],
+			groupName: "Ruby on Rails",
+			automerge: false,
+		},
 	],
 	customManagers: [
 		{
