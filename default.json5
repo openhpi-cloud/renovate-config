@@ -25,7 +25,7 @@
 	platformAutomerge: false,
 
 	// Have renovate sign commits as GitHub App.
-	platformCommit: true,
+	platformCommit: "enabled",
 
 	packageRules: [
 		// Automerge minor updates if CI passes
